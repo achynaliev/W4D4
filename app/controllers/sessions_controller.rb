@@ -11,13 +11,13 @@ class SessionsController < ApplicationController
       render :new
     else
       login_user!(user)
-      redirect_to users_url(user)
+      redirect_to user_url(user)
     end
   end
 
   def destroy
     logout_user!
-    redirect_to new_session_url
+    redirect_to users_url
   end
 
   def new

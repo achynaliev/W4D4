@@ -7,6 +7,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+    <h1 class="main-logo">My Music App</h1>
+    <% if current_user %>
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete"
+        <%= auth_token %>
+        <input type="submit" value='logout'>
+      </form>
+    <% else %>
+      <form action="<%= new_session_url %>" method="get">
+        <%= auth_token %>
+        <input type="submit" value='login'>
+      </form>
+    <% end %>
+  </header>
 
   <body>
     <%= yield %>
