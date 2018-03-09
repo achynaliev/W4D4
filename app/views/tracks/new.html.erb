@@ -1,0 +1,15 @@
+<h1> Create a new track </h1>
+<form action="<%= band_album_tracks_url %>" method="post">
+  <%= auth_token %>
+  <label for="title"> Please enter the title of the track
+    <input type="text" name="track[title]" id="title">
+  </label>
+  <br>
+  <label for="ord"> Please enter number of the track on the album
+    <input type="integer" name="track[ord]" id="ord">
+  </label>
+  <br>
+  <input type="hidden" name="track[album_id]" value="<%=@album_id%>">
+  <br>
+  <input type="submit">
+</form>

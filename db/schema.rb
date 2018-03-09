@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308211742) do
+ActiveRecord::Schema.define(version: 20180308212658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180308211742) do
     t.string "title", null: false
     t.integer "year", null: false
     t.boolean "studio", default: true, null: false
+    t.integer "band_id"
   end
 
   create_table "bands", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180308211742) do
     t.integer "ord"
     t.text "lyrics"
     t.boolean "bonus", default: false
+    t.integer "album_id"
   end
 
   create_table "users", force: :cascade do |t|

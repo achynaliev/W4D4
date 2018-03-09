@@ -1,0 +1,20 @@
+<h1> Create a new Album </h1>
+<form action="<%= band_albums_url %>" method="post">
+  <%= auth_token %>
+  <label for="title"> Please enter the title of the album
+    <input type="text" name="album[title]" id="title">
+  </label>
+  <br>
+  <label for="year"> year of this album
+    <input type="text" name="album[year]" id="year">
+  </label>
+  <br>
+  <label for="studio"> live or studio
+    <br>
+    <input type="radio" name="album[studio]" value="false" id="studio">live<br>
+    <input type="radio" name="album[studio]" value="true" id="studio" checked>studio<br>
+  </label>
+  <input type="hidden" name="album[band_id]" value="<%=@band_id%>">
+  <br>
+  <input type="submit">
+</form>
